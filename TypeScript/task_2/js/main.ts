@@ -10,6 +10,8 @@ interface TeacherInterface {
 	workTeacherTasks(): string;
 }
 
+type Subjects = "Math" | "History";
+
 class Director implements DirectorInterface {
 	workFromHome(): string {
 		return "Working from home";
@@ -53,5 +55,9 @@ const executeWork = (employee: Director | Teacher) => {
 		return;
 	}
 	console.log(employee.workTeacherTasks);
+};
+
+const teachClass = (todayClass: Subjects) => {
+	console.log(`Teaching ${todayClass}`);
 };
 
